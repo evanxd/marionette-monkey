@@ -9,7 +9,3 @@
 #產品示意圖
 Example:
 ![travis-reporter prototype](./../resources/prototype_sample.png)
-
-Spec history:
-
-Version 01
