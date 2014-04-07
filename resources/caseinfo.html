@@ -1,0 +1,124 @@
+<html>
+  <head> 
+    <script  type = "text/javascript"  src = "https://www.google.com/jsapi" ></script> 
+    <script  type = "text/javascript" > 
+      google . load ( "visualization" ,  "1" ,  { packages :[ "corechart" ]}); 
+      google . setOnLoadCallback ( drawChart ); 
+      function drawChart ()  { 
+        var data = google . visualization . arrayToDataTable ([ 
+          [ 'date' ,  'error'], 
+          [ '' ,   0 ], 
+          [ '2014/03/14' ,   10 ], 
+          [ '' ,   10 ], 
+          [ '2014/03/16' ,   20 ], 
+          [ '' ,   10 ], 
+          [ '2014/03/18' ,   30 ], 
+          [ '' ,   30 ], 
+          [ '2014/03/20' ,   0 ] , 
+          [ '' ,   60 ], 
+          [ '2014/03/22' ,   50 ] , 
+          [ '' ,   70 ], 
+          [ '2014/03/24' ,   70 ] , 
+          [ '' ,   80 ], 
+          [ '2014/03/26' ,   60 ] , 
+          [ '' ,   80 ], 
+          [ '2014/03/28' ,   80 ] 
+        ]); 
+
+        var options =  { 
+          title :  '' 
+        }; 
+
+        var chart =  new google . visualization . LineChart ( document . getElementById ( 'chart_div' )); 
+        chart . draw ( data , options ); 
+      } 
+    </script> 
+  </head> 
+<body>
+	<div style="width:800px;height:35px;background-color:#313131;color:white;">
+			<h2>&nbspMarionette_settings_test.js</h2>
+	</div>
+	<div style="width:798px;height:53px;background-color:#959595;border:1px solid black;text-align:left;vertical-align:top;">
+		<table>
+			<tr>
+				<th style="text-align:left;">Test case</th>
+				<th style="text-align:left;">Date</th>
+				<th rowspan="2" style="width:200px;text-align:right;vertical-align:top;"><a href=""><img src="img/bt_help.png" alt="about" width="40" height="40"></a></th>
+			</tr>
+			<tr>
+				<td>
+					<form action="">
+						<select name="testcase" style="width:500px;">
+							<option value="case1">Test case:"make sure wap push in mozSetting exists."</option>
+						</select>
+					</form>
+				</td>
+				<td>
+					<form action="">
+						<select name="date" style="width:100px;">
+							<option value="<5"><5days</option>
+						</select>
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="width:798px;height:513px;border:1px solid black;">
+		<div style="width:768px;height:483px;background-color:#535353;border:15px solid #959595;">
+			<div style="width:766px;height:481px;border:1px solid black;">
+				<h3 style="width:756px;height:30px;background-color:#313131;vertical-align:middle;margin-top:5px;margin-bottom:5px;margin-left:5px;margin-right:5px">&nbspLine chart</h3>
+				<div id="chart_div" style="width:756px;height:130px;background-color:#313131;margin-left:5px;margin-right:5px">
+				</div>
+				<h3 style="width:756px;height:30px;background-color:#313131;vertical-align:middle;margin-top:5px;margin-bottom:5px;margin-left:5px;margin-right:5px">&nbspTest case history</h3>
+				<table style="width:756px;height:50px;background-color:#959595;margin-left:5px;margin-right:5px;border-collapse:collapse;">
+					<tr>
+						<th style="border:1px solid black;width:70px;">Status</th>
+						<th style="border:1px solid black;width:70px;">Build</th>
+						<th style="border:1px solid black;width:180px;">Message</th>
+						<th style="border:1px solid black;width:90px;">Commit</th>
+						<th style="border:1px solid black;width:100px;">Committer</th>
+						<th style="border:1px solid black;width:110px;">Duration</th>
+						<th style="border:1px solid black;width:110px;">Finished</th>
+					</tr>
+				</table>
+				<table style="width:756px;height:48px;background-color:#959595;margin-left:5px;margin-right:5px;margin-top:2px;margin-bottom:2px;border:1px solid black;">
+					<tr>
+						<th style="width:70px;">Failed</th>
+						<th style="width:70px;">33559</th>
+						<th style="width:180px;">Revert "Merge pull re...</th>
+						<th style="width:90px;">f9a44b5...</th>
+						<th style="width:100px;">Evan</th>
+						<th style="bwidth:110px;">1 hr 33mi...</th>
+						<th style="width:110px;">about 3 hr...</th>
+					</tr>
+				</table>
+				<table style="width:756px;height:48px;background-color:#959595;margin-left:5px;margin-right:5px;margin-top:2px;margin-bottom:2px;border:1px solid black;">
+					<tr>
+						<th style="width:70px;">Failed</th>
+						<th style="width:70px;">33558</th>
+						<th style="width:180px;">Revert "Merge pull re...</th>
+						<th style="width:90px;">abdabcc...</th>
+						<th style="width:100px;">EragonJ</th>
+						<th style="bwidth:110px;">1 hr 33mi...</th>
+						<th style="width:110px;">about 3 hr...</th>
+					</tr>
+				</table>
+				<table style="width:756px;height:48px;background-color:#959595;margin-left:5px;margin-right:5px;margin-top:2px;margin-bottom:2px;border:1px solid black;">
+					<tr>
+						<th style="width:70px;">Failed</th>
+						<th style="width:70px;">33557</th>
+						<th style="width:180px;">Revert "Merge pull re...</th>
+						<th style="width:90px;">24f562f...</th>
+						<th style="width:100px;">GeorgeD</th>
+						<th style="bwidth:110px;">1 hr 33mi...</th>
+						<th style="width:110px;">about 3 hr...</th>
+					</tr>
+				</table>
+				<div style="text-align:right;">
+					<button id="searchbutton" style="width:90px;height:30px;vertical-align:top;font-size:25px;border:1px solid black;background-color:#959595;margin-right:5px;font-size:18px;"><b>More...</b></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
