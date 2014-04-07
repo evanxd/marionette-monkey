@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Travis Reporter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="img/favicon.png">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/Detail.js"></script>
+    <script type="text/javascript" src="js/frameControl.js"></script>
+    <script type="text/javascript" src="js/chart.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+</head>
+
+<body>
+<div >
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-6 column">
+					<a id='home'   href=#><img alt="140x140" src="img/bt_home.png"></a>
+                    <a id="help"  href=#><img alt="140x140" src="img/bt_help.png"></a>
+				</div>
+			</div>
+            <div class='col-md-8 column'  id="searchBar">
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <img src="img/magnifier.png">
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                <input type="text" class="form-control">
+                </div> <a href="" class="alert-link"><img src="img/bt_search.png" alt="100x60"></a>
+                </form>
+                </div>
+            </div>
+			</div>
+		</div>
+    <div id="searchToolBar">
+        <table class="table"><thead><tr><th rowspan="2">Search Tools</th><td>Component</td><td>Error rate</td><td>Date range</td><td>Display count</td></tr></thead>
+        <tbody><tr>
+            <td></td><td><form><select id='component'name="Component"><option>Setting</option><option>app</option></select></form></td>
+            <td><form><select id="error_rate" name="Error rate"><option>>30</option><option>20</option></select></form></td>
+            <td><form><select id='date_range'name="Date range"><option>None</option><option>temp</option></select></form></td>
+            <td><form><select id="display_count" name="Display count"><option><5</option><option><10</option><option><15</option></select></form></td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+    <hr/>
+	<div id='risky_table'class="row clearfix">
+		<div class="col-md-12 column">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+                          Component
+						</th>
+						<th>
+							Name
+						</th>
+						<th>
+							Date
+						</th>
+                        <th>
+                            Error Count<a href=""><img src="img/arrow_down.png"></a>
+                        </th>
+                        <th>
+
+                        </th>
+					</tr>
+				</thead>
+				<tbody id="risky_body">
+					<tr class="danger">
+						<td>
+							Setting
+						</td>
+                        <td>
+                            battery
+                        </td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							1600
+						</td>
+                        <td>
+                            <a class="label" href=#> <img src="img/bt_detail.png"></a>
+                        </td>
+					</tr>
+					<tr class="danger">
+						<td>
+							app
+						</td>
+                        <td>
+                            battery
+                        </td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							1400
+						</td>
+                        <td>
+                            <a class="label" href=#> <img  id="12" src="img/bt_detail.png"></a>
+                        </td>
+					</tr>
+					<tr class="danger">
+						<td>
+							test
+						</td>
+                        <td>
+                            marionette.js
+                        </td>
+						<td>
+							02/04/2012
+						</td>
+						<td>
+							1200
+						</td>
+                        <td>
+                            <a  class="label" href=#> <img  id="34" src="img/bt_detail.png"></a>
+                        </td>
+					</tr>
+					<tr class="danger">
+						<td>
+							settings
+						</td>
+                        <td>
+                            battery.js
+                        </td>
+						<td>
+							03/04/2012
+						</td>
+						<td>
+							1000
+						</td>
+                        <td>
+                            <a class="label" href=#><img  id='1234' src="img/bt_detail.png"></a>
+                        </td>
+					</tr>
+					<tr class="text-warning" >
+						<td>
+							test
+						</td>
+                        <td>
+                            alarm.js
+                        </td>
+						<td>
+							04/04/2012
+						</td>
+						<td>
+							600
+						</td>
+                        <td>
+                            <a class="label" href=#> <img   id='as' src="img/bt_detail.png"></a>
+                        </td>
+					</tr>
+                    <tr class="text-warning">
+                        <td>
+                            test
+                        </td>
+                        <td>
+                            battery.js
+                        </td>
+                        <td>
+                            04/04/2012
+                        </td>
+                        <td>
+                            400
+                        </td>
+                        <td>
+                            <a  class="label" href=#> <img src="img/bt_detail.png"></a>
+                        </td>
+                    </tr>
+                    <tr class="text-warning">
+                        <td>
+                           settings
+                        </td>
+                        <td>
+                            battery
+                        </td>
+                        <td>
+                            04/04/2012
+                        </td>
+                        <td>
+                           300
+                        </td>
+                        <td>
+                            <a class="label" href=#> <img   src="img/bt_detail.png"></a>
+                        </td>
+                    </tr>
+                    <tr class="text-warning">
+                        <td>
+                            test
+                        </td>
+                        <td>
+                            aaa.js
+                        </td>
+                        <td>
+                            04/04/2012
+                        </td>
+                        <td>
+                           200
+                        </td>
+                        <td>
+                            <a class="label" href=#> <img  src="img/bt_detail.png"></a>
+                        </td>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div id="data_table">
+    <div class="row clearfix">
+        <table class="table">
+            <tr>
+                <th>Test Case</th>
+                <th>Date</th>
+                <th rowspan="2"><a href=#><img src="img/bt_help.png" ></a></th>
+            </tr>
+            <tr>
+                <td>
+                    <form>
+                        <select>
+                            <option>Test Case::1212154545</option>
+                        </select>
+                    </form></td>
+                <td>
+                    <form>
+                        <select>
+                            <option><5days</option>
+                        </select>
+                    </form></td>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div id=div_chart class="row clearfix"></div>
+    <div class="row clearfix"></div>
+    <div class="row clearfix"></div>
+</div>
+    <script>setChart()</script>
+</body>
+</html>
