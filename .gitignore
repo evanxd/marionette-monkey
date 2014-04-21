@@ -1,1 +1,2 @@
 *.swp
+resources/travis-reporter/node_modules
