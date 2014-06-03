@@ -71,7 +71,9 @@ define(function () {
 			$.ajax({
 				url: "/data",
 				type: "GET",
-				data: option,
+				contentType: 'application/json; charset=utf-8',
+				dataType: 'json',
+				data: JSON.stringify(option),
 				async: false,
 				success: function (data) {
 					var length = data.length,
