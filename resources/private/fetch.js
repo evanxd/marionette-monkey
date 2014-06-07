@@ -9,10 +9,10 @@ var owner = 'mozilla-b2g',
   reponame = 'gaia';
 var timeTemp;
 var IDsTemp,count;
-var oldTemp=null;
+var oldTemp;
 module.exports ={
     doThing : function(time,IDs,callback){ 
-    IDsTemp={},count=0;
+    IDsTemp={},count=0,oldTemp=null;
     var newTime=time;
     var newIDs;
     if(IDs!=null){
